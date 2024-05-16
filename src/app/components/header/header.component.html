@@ -1,1 +1,23 @@
-<p>header works!</p>
+<div class="header-container">
+  <div class="header-content">
+    <mat-grid-list  cols="3" rowHeight="2rem">
+      <mat-grid-tile>
+        <a routerLink="/" class="header-logo">
+          <img src="../../../assets/pokemonLogo.png" alt="Logo" height="40" />
+        </a>
+      </mat-grid-tile>
+      <mat-grid-tile>
+        <div>
+          <p class="user-email">{{ email }}</p>
+        </div>
+      </mat-grid-tile>
+      <mat-grid-tile  class="mat-grid-tile-content">
+        <div>
+        <button mat-icon-button *ngIf="loggedIn" aria-label="Logout" (click)="logout()">
+          <mat-icon>exit_to_app</mat-icon>
+        </button>
+      </div>
+      </mat-grid-tile>
+    </mat-grid-list>
+  </div>
+</div>

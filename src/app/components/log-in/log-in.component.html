@@ -1,1 +1,27 @@
-<p>log-in works!</p>
+<h1 style="color: black;">Iniciar sesión</h1>
+<form class="example-form" [formGroup]="checkoutForm" (ngSubmit)="onSubmit()">
+    <mat-form-field class="example-full-width">
+      <mat-label>Email</mat-label>
+      <input type="email" matInput formControlName="email" placeholder="pat@example.com">
+      <mat-error *ngIf="checkoutForm.get('email')?.hasError('required')">
+        Email is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="checkoutForm.get('email')?.hasError('email')">
+        Please enter a valid email address (e.g., pat#64;example.com)
+      </mat-error>
+    </mat-form-field>
+    <mat-form-field class="example-full-width">
+      <mat-label>Password</mat-label>
+      <input type="password" matInput formControlName="password" placeholder="password">
+      <mat-error *ngIf="checkoutForm.get('password')?.hasError('required')">
+        Password is <strong>required</strong>
+      </mat-error>
+      <mat-error *ngIf="checkoutForm.get('password')?.hasError('minlength')">
+        Password must be at least 6 characters long
+      </mat-error>
+    </mat-form-field>
+    <div style="display: flex; justify-content: flex-end;">
+      <button  mat-raised-button type="submit" style="color: rgb(211, 254, 240); background-color: rgb(0, 0, 0);">Login</button>
+  </div>
+  </form>
+  
